@@ -1,0 +1,115 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  header {
+    background-color: #eee;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ddd;
+  }
+  
+  nav li {
+    margin-right: 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  p{
+    border: 5px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+  .my-style {
+    color: red;
+    font-size: 20px;
+  }
+
+  main {
+    padding: 20px;
+  }
+  
+  .first-table {
+
+    width: 100%;
+    position: relative;
+  }
+
+  .first-table th{
+    border: 1px;
+    background-color: skyblue;
+    padding: 10px;
+    width: 30%;
+  }
+
+  .first-table tr:nth-child(even) {
+    background-color: lightsteelblue;
+  }
+  .first-table tr:nth-child(odd) {
+    background-color: lightblue;
+  }
+
+  .first-table td{
+    border: 1px;
+    padding: 10px;
+    width: auto;
+  }
+
+  .second-table {
+    background-color: black;
+    width: 100%;
+    position: relative;
+    margin: 1px;
+  }
+
+  .second-table th{
+    background-color: darkgrey;
+    padding: 10px;
+  }
+
+  .second-table td{
+    background-color: lightgrey;
+    padding: 10px;
+  }
+
+  .right-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .left-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+
+  footer {
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
+  }
+
