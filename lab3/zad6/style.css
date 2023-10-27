@@ -1,0 +1,114 @@
+.page {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.page .menu {
+    width: 200px;
+    background-color: white;
+    border-right: 2px solid gray;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition-property: width, border-right-width;
+    transition-duration: 1s, 0s;
+    transition-delay: 0s, 1s;
+    transition-timing-function: ease-out;
+    
+}
+
+.page .menu .trans {
+
+}
+
+.page .content {
+    width:100%;
+    background-color: lightgrey;
+    text-align: center;
+    display: flex;
+}
+
+.page .content p {
+    margin: auto;
+    width: auto;
+}
+
+.page .menu ul {
+    list-style-type: none;
+    padding-left: 0;
+    transition-property: width, border-right-width;
+    transition-duration: 1s, 0s;
+    transition-delay: 0s, 1s;
+    transition-timing-function: ease-out;
+}
+
+.page .menu li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.page .menu li:target {
+    background-color: aqua;
+}
+
+.page .menu li a {
+    display: block;
+    color: darkblue;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition-property: width, border-right-width;
+    transition-duration: 1s, 0s;
+    transition-delay: 0s, 1s;
+    transition-timing-function: ease-out;
+}
+
+.page .menu li a:hover {
+    background-color: lightblue;
+    color: white;
+}
+
+.page .menu li a:hover img.icon {
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.page .menu li a img.icon:hover {
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.page .menu .icon {
+    border: 2px solid darkblue;
+    border-radius: 5px;
+
+}
+
+@media (max-width: 400px){
+    .page .menu {
+        width: 30px;
+    }
+
+    .page .content {
+        width: 100%
+    }
+
+    .page .menu li {
+        width: 60px;
+    }
+
+    .page .menu li a {
+        transition: width 0.5s;
+    }
+
+    .page .menu li a {
+        color: black;
+    }
+}

@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .background{
+    position: absolute;
+    height: 400px;
+    border-bottom: 100px solid transparent;
+    border-left: 1600px solid rgb(53, 120, 229);
+    transition: height 1s ease-in-out;
+  }
+
+  .main {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 60px;
+
+    position: relative;
+    width:100%;
+    height: 600px;
+  }
+
+  .cornered {
+    width: 160px;
+    height: 0px;
+  }
+
+  .naglowek {
+    width: 400px;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    padding: 20px;
+  }
+  
+
+  .naglowek .button {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(53, 120, 229);
+    border: #fff 1px solid;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .naglowek .button a{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .info {
+    width: 100%;
+  }
+
+  .info h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: normal;
+    color: #fff;
+  }
+  
+  .info p {
+    margin: 10px 0;
+    font-size: 12px;
+    color: #fff;
+  }
+  
+  /* .formularz .button {
+    width: 100px;
+    height: 50px;
+    background-color: rgb(53, 120, 229);
+  } */
+
+  .formularz {
+    margin: 20px;
+    width: 400px;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    box-shadow: 0 0 10px #868686;
+    border-radius: 10px;
+    padding: 30px;
+
+  }
+
+  .formularz h2{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: normal;
+    color: #888888;
+  }
+
+  .field {
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #888888;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px #333;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(53, 120, 229);
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: rgb(53, 120, 229);
+  }
+
+  @media screen and (min-width: 970px) {
+    .naglowek{
+      animation: slideFromLeft 1s ease-in-out;
+    }
+    @keyframes slideFromLeft {
+      from {
+        transform: translateX(-300px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .formularz{
+      animation: slideFromRight 1s ease-in-out;
+    }
+    @keyframes slideFromRight {
+      from {
+        transform: translateX(300px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+  }
+
+
+
+  @media (max-width: 970px) {
+    .naglowek {
+      top : 0;
+      width: 400px;
+      height: auto;
+      align-items: center;
+    }
+
+    .naglowek .info {
+      animation: resizeNaglowek 1s ease-in-out;
+    }
+    @keyframes resizeNaglowek {
+      from {
+        transform: translateY(-300px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+    
+    .naglowek .button {
+      animation: showButton 1.5s ease-in-out;
+    }
+    @keyframes showButton {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .formularz {
+      width: 400px;
+
+      animation: resizeFormularz 1s ease-in-out;
+    }
+    @keyframes resizeFormularz {
+      from {
+        transform: translateY(300px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    .background{
+      height: 1000px;
+    }
+  }
+
+

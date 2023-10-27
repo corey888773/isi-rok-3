@@ -1,0 +1,132 @@
+*{
+    .strona {
+    /* styles for the main container */
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+  }
+  
+  .strona #top {
+    position: relative;
+    background-color: darkgrey;
+    display: flex;
+    flex-grow: 2;
+    padding: 0 2% 0 2% ;
+    text-align: center;;
+    border: solid 1px black;
+  }
+  .strona #top #top-strony {   
+    flex-grow: 3;
+  }
+  
+  .strona #top #logo {
+    background-color: white;
+    height: 50%;
+    width: 23%;
+    order: -1;
+    align-self: center;
+
+    border: solid 1px black;
+  }
+  
+  .strona #tresc {
+    position: relative;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    flex-grow: 5;
+    flex-direction: column;
+    border: solid 1px black;    
+  }
+  
+  .strona #tresc #navbar {
+    position: relative;
+    background-color: white;
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    flex-direction: row;
+    /* styles for the navigation bar */
+  }
+  
+  .strona #navbar #menu {
+    flex-grow: 1;
+    border: solid 1px black;
+  }
+  
+  .strona #tresc #content {
+    display:flex;
+    position: relative;
+    flex-direction: row;
+    width:100%;
+    flex-wrap: wrap;
+    background-color: whitesmoke;
+    flex-grow: 5;
+    /* styles for the main content area */
+  }
+
+  .strona #content #lewa-kolumna {
+    border: solid 1px black;
+    width: 20%;
+  }
+  
+  .strona #content #zawartosc {
+    border: solid 1px black;
+    width: 59%;
+  }
+
+  .strona #content #prawa-kolumna {
+    border: solid 1px black;
+    width: 20%;
+  }
+  
+  .strona #stopka { 
+    background-color: darkgrey;
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    border: solid 1px black;
+  }
+
+  @media screen and (max-width: 1200px){
+    .strona #content #lewa-kolumna {
+      width: 30%;
+    }
+    
+    .strona #content #zawartosc {
+      width: 69%;
+    }
+
+    .strona #content #prawa-kolumna {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .strona #content {
+      flex-direction: row;
+    }
+
+    .strona #content #lewa-kolumna {
+      width: 100%;
+    }
+    
+    .strona #content #zawartosc {
+      width: 100%;
+    }
+
+    .strona #content #prawa-kolumna {
+      width: 100%;
+    }
+    
+    .strona #top #logo {
+      display: none;
+    }
+
+  }
+}
