@@ -1,5 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-image: url("bg.jpg");
+    min-width: 630px;
 }
 
 body::before{
@@ -17,8 +24,9 @@ body::before{
     margin: 0;
     padding: 0;
     z-index: 1;
-    height: 50px;
+    height: auto;
     background-color: rgb(118, 178, 223);
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -34,7 +42,8 @@ body::before{
 
 .navbar .nav-menu {
     margin: 0 20px 0 20px;
-    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .navbar a{
@@ -55,32 +64,126 @@ body::before{
     position: relative;
   }
 
+.nav-menu .dropdown-menu {
+    padding: 50px 10px 50px 0px;
+    box-sizing: border-box;
+  }
+
+  /* small triangle on levels 0 */
+  .nav-menu ul .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: 51%;
+    right: -2px; /* adjust the position of the triangle */
+    transform: translateY(-50%);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    border-top: 7px solid white; /* set the color of the triangle */
+}
+
   /* layer 0 */
-.nav-menu .dropdown-menu ul {
+.nav-menu .dropdown-menu .ul-wrap {
     display: none;
   }
 
-.nav-menu .dropdown-menu:hover ul{
+.nav-menu .dropdown-menu:hover .ul-wrap{
     display: flex;
     flex-direction: column;
     position: absolute;
-    background-color: rgb(118, 178, 223);
   }
 
-.nav-menu .dropdown-menu .dropdown-menu ul{
+.nav-menu .dropdown-menu:hover .ul-wrap ul{
+    margin: 16px 70px 30px 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .nav-menu .dropdown-menu:hover ul li{
+    margin: 0;
+    padding: 10px;
+    border-bottom: 1px solid rgb(118, 178, 223);
+    width: 100px;
+  }
+
+  .nav-menu .dropdown-menu:hover ul li a{
+    margin: 0;
+    padding: 10px;
+    color: rgb(118, 178, 223);
+  }
+
+  /* small triangle on levels 1-2 */
+  .nav-menu .dropdown-menu:hover ul .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -5px; /* adjust the position of the triangle */
+    transform: translateY(-50%);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 10px solid rgb(118, 178, 223); /* set the color of the triangle */
+}
+
+.nav-menu .dropdown-menu .dropdown-menu:hover {
+  background-color: rgb(118, 178, 223)  ;
+}
+
+.nav-menu .dropdown-menu .dropdown-menu:hover a{
+  color: white;
+}
+
+/* on hovering the dropdown-menu change the triangle to white */
+.nav-menu .dropdown-menu:hover .dropdown-menu::before {
+  border-left: 10px solid white;
+}
+
+  /* layer 1 */
+.nav-menu .dropdown-menu .dropdown-menu .ul-wrap{
     display: none;
   }
 
-.nav-menu .dropdown-menu .dropdown-menu:hover ul{
+.nav-menu .dropdown-menu .dropdown-menu:hover .ul-wrap{
     display: flex;
     padding: 10px;
-    top: 0;
-    left: 100%;
+    top: -113px;
+    left: 10px;
     flex-direction: column;
     position: absolute;
-    background-color: rgb(118, 178, 223);
+    background-color: transparent;
   }
 
+.nav-menu .dropdown-menu .dropdown-menu:hover .ul-wrap ul{
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+  /* layer 2 */
+.nav-menu .dropdown-menu .dropdown-menu .dropdown-menu .ul-wrap{
+    display: none;
+  }
+
+.nav-menu .dropdown-menu .dropdown-menu .dropdown-menu:hover .ul-wrap{
+    display: flex;
+    padding: 10px;
+    top: -10px;
+    left: 40px;
+    flex-direction: column;
+    position: absolute;
+    background-color: transparent;
+  }
+
+  .nav-menu .dropdown-menu .dropdown-menu .dropdown-menu:hover .ul-wrap ul{
+    margin: 0px 70px 30px 70px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+
+
+  /* login menu */
   .log-menu {
     margin-right: 20px;
     display: flex;
@@ -90,7 +193,7 @@ body::before{
   }
 
   .log-menu .button{
-    margin: 0 2px 0 2px;
+    margin: 5px 2px;
     padding: 10px 20px 10px 20px;
     border-radius: 25px;
     border: 1px solid white;
@@ -107,3 +210,13 @@ body::before{
   }
 
   
+@media (max-width: 630px) {
+    body {
+        min-width: 480px;
+    }
+
+    .navbar .logo {
+        display: none;
+    }
+
+}
