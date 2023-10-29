@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #e3e3e3;
+    font-family: 'Roboto', sans-serif;
+}
+
+.page > .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    padding: 30px 0px 0px 0px;
+    color: green;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px 40px 40px;
+}
+
+.content {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 40px 40px 40px;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.content article {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding-bottom: 20px ;
+}
+
+.content article .title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #515151;
+}
+
+.content article .text {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #515151;
+}
+
+.content .more {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.content .more a {
+    text-decoration: none;
+}
+
+.content .more .text {
+    color: green;
+    padding-bottom: 2px;
+    border-bottom: 1px solid green;
+}
+
+
+.photos {
+    right: 0px;
+    height: 50%;
+    width: 50%;
+    position: relative;
+    display: flex;
+    margin-left: 50px;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.photos img {
+    height:250px;
+
+    -webkit-box-shadow: -3px 3px 5px 2px darkslategrey;
+    -moz-box-shadow: -3px 3px 5px 2px darkslategrey;
+    box-shadow: -3px 3px 5px 2px darkslategrey;
+}
+
+.photos #img1 {
+    position: absolute;
+    z-index: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.photos #img2 {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    z-index: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.photos #img3 {
+    position: absolute;
+    top: 120px;
+    left: 180px;
+    z-index: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+#img1:hover, #img2:hover, #img3:hover{
+    z-index:1;
+    border:green 10px solid;
+    border-style: round;
+    border-radius: 20px;
+    padding: 15px;
+
+    transform: scale(1.2);
+    transition:all 0.2s ease-in-out;
+}
+
+@media (max-width:1200px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        width: 100%;
+        height: 50%;
+        padding: 0px 40px 40px 40px;
+    }
+
+    .photos {
+        transform: translateX(-20px);
+        min-width: 680px;
+        height: 50%;
+    }
+}

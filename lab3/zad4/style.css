@@ -12,8 +12,8 @@ body {
   .background{
     position: absolute;
     height: 400px;
-    border-bottom: 100px solid transparent;
-    border-left: 1600px solid rgb(53, 120, 229);
+    border-bottom: 216px solid transparent;
+    border-left: 4320px solid rgb(53, 120, 229);
     transition: height 1s ease-in-out;
   }
 
@@ -143,11 +143,11 @@ body {
 
   @media screen and (min-width: 970px) {
     .naglowek{
-      animation: slideFromLeft 1s ease-in-out;
+      animation: slideFromLeft 1.3s ease-in-out;
     }
     @keyframes slideFromLeft {
       from {
-        transform: translateX(-300px);
+        transform: translateX(-900px);
       }
       to {
         transform: translateX(0);
@@ -155,11 +155,11 @@ body {
     }
 
     .formularz{
-      animation: slideFromRight 1s ease-in-out;
+      animation: slideFromRight 1.3s ease-in-out;
     }
     @keyframes slideFromRight {
       from {
-        transform: translateX(300px);
+        transform: translateX(900px);
       }
       to {
         transform: translateX(0);
@@ -209,7 +209,7 @@ body {
     }
     @keyframes resizeFormularz {
       from {
-        transform: translateY(300px);
+        transform: translateY(600px);
       }
       to {
         transform: translateY(0);

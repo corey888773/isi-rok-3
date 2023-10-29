@@ -52,140 +52,220 @@ body::before{
 }
 
 .nav-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
 
-  /* navbar items */
-.nav-menu ul > li {
-    display: inline-block;
-    margin-right: 10px;
+.nav-menu ul li{
+    padding: 10px 20px 10px 20px;
+    cursor: pointer;
+}
+
+.nav-menu .dropable0 {
     position: relative;
-  }
+    display: flex;
+    flex-direction: column;
+}
 
-.nav-menu .dropdown-menu {
-    padding: 50px 10px 50px 0px;
-    box-sizing: border-box;
-  }
+.nav-menu .dropdown1 li:first-child{
+  position: relative;
+}
 
-  /* small triangle on levels 0 */
-  .nav-menu ul .dropdown-menu::before {
+.nav-menu .dropdown1 .starting0-arrow {
+    /* create green triangle */
     content: "";
     position: absolute;
-    top: 51%;
-    right: -2px; /* adjust the position of the triangle */
-    transform: translateY(-50%);
-    border-right: 5px solid transparent;
+    top: -10px;
+    right: 50%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+}
+
+.nav-menu .dropable0 .dropable0-arrow {
+    /* create green triangle */
+    content: "";
+    position: absolute;
+    top: 17px;
+    right: 10px;
     border-left: 5px solid transparent;
-    border-top: 7px solid white; /* set the color of the triangle */
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
 }
 
-  /* layer 0 */
-.nav-menu .dropdown-menu .ul-wrap {
-    display: none;
-  }
+.nav-menu .dropable0:hover .dropdown1 {
+  opacity: 1;
+  pointer-events: all;
+  left: -200px;
+  background-color: transparent;
+  padding: 30px 200px 30px 200px;
+}
 
-.nav-menu .dropdown-menu:hover .ul-wrap{
+.nav-menu .dropdown1 {
+    opacity: 0;
+    pointer-events: none;
     display: flex;
     flex-direction: column;
     position: absolute;
-  }
+    top: 14px;
+    left: -100px;
+    background-color: transparent;
+    
+    transition: 0.2s ease-in-out, left 0.2s ease-in-out, top 0.2s ease-in-out;
+}
 
-.nav-menu .dropdown-menu:hover .ul-wrap ul{
-    margin: 16px 70px 30px 0px;
+.nav-menu .dropdown1 ul {
+    list-style-type: none;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.nav-menu .dropdown1 li{
     background-color: white;
-  }
-
-  .nav-menu .dropdown-menu:hover ul li{
-    margin: 0;
-    padding: 10px;
+    cursor: pointer;
     border-bottom: 1px solid rgb(118, 178, 223);
-    width: 100px;
-  }
+    min-width: 100px;
+}
 
-  .nav-menu .dropdown-menu:hover ul li a{
-    margin: 0;
-    padding: 10px;
+
+.nav-menu .dropable {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgb(118, 178, 223);
+}
+
+.nav-menu .dropdown1 li:last-child{
+    border-bottom: none;
+}
+
+.nav-menu .dropdown1 li:hover{
+    background-color: rgb(118, 178, 223);
+}
+
+.nav-menu .dropdown1 li a{
     color: rgb(118, 178, 223);
-  }
-
-  /* small triangle on levels 1-2 */
-  .nav-menu .dropdown-menu:hover ul .dropdown-menu::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -5px; /* adjust the position of the triangle */
-    transform: translateY(-50%);
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 10px solid rgb(118, 178, 223); /* set the color of the triangle */
+    text-decoration: none;
 }
 
-.nav-menu .dropdown-menu .dropdown-menu:hover {
-  background-color: rgb(118, 178, 223)  ;
-}
-
-.nav-menu .dropdown-menu .dropdown-menu:hover a{
+.nav-menu .dropdown1 li:hover a:not(.dropdown2 a){
   color: white;
 }
 
-/* on hovering the dropdown-menu change the triangle to white */
-.nav-menu .dropdown-menu:hover .dropdown-menu::before {
-  border-left: 10px solid white;
+.nav-menu .starting-arrow {
+  /* create green triangle */
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -10px;
+  border-right: 10px solid white;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
 }
 
-  /* layer 1 */
-.nav-menu .dropdown-menu .dropdown-menu .ul-wrap{
-    display: none;
-  }
-
-.nav-menu .dropdown-menu .dropdown-menu:hover .ul-wrap{
-    display: flex;
-    padding: 10px;
-    top: -113px;
-    left: 10px;
-    flex-direction: column;
-    position: absolute;
-    background-color: transparent;
-  }
-
-.nav-menu .dropdown-menu .dropdown-menu:hover .ul-wrap ul{
-    margin: 100px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
+.nav-menu .dropable .dropable-arrow{
+  content: "";
+  position: absolute;
+  top: 14px;
+  right:5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid rgb(118, 178, 223);
 }
 
-  /* layer 2 */
-.nav-menu .dropdown-menu .dropdown-menu .dropdown-menu .ul-wrap{
-    display: none;
-  }
+.nav-menu .dropdown1 li:hover > .dropable-arrow{
+  content: "";
+  position: absolute;
+  top: 14px;
+  right:5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid white;
+}
 
-.nav-menu .dropdown-menu .dropdown-menu .dropdown-menu:hover .ul-wrap{
-    display: flex;
-    padding: 10px;
-    top: -10px;
-    left: 40px;
-    flex-direction: column;
-    position: absolute;
-    background-color: transparent;
-  }
+.nav-menu .dropdown2 li:hover > .dropable-arrow{
+  content: "";
+  position: absolute;
+  top: 14px;
+  right:5px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 7px solid white;
+}
 
-  .nav-menu .dropdown-menu .dropdown-menu .dropdown-menu:hover .ul-wrap ul{
-    margin: 0px 70px 30px 70px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-  }
+.nav-menu .dropable:hover > li > .dropdown2 {
+  opacity: 1;
+  pointer-events: all;
+
+  left: 90px;
+  background-color: transparent;
+  padding: 0px 200px 200px 20px;
+}
+
+.nav-menu .dropdown2 {
+  opacity: 0;
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 190px;
+
+  transition: 0.2s ease-in-out, left 0.2s ease-in-out, top 0.2s ease-in-out;
+}
+
+.nav-menu .dropdown2 a{
+  color: rgb(118, 178, 223);
+  text-decoration: none;
+}
+
+.nav-menu .dropdown2 li:hover a:not(.dropdown3 a){
+  color: white;
+}
+
+.nav-menu .dropdown3 {
+  opacity: 0;
+  pointer-events: none;
+
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 190px;
+
+  transition: 0.2s ease-in-out, left 0.2s ease-in-out, top 0.2s ease-in-out;
+}
+
+.nav-menu .dropable:hover > li > .dropdown3 {
+  opacity: 1;
+  pointer-events: all;
+
+  top:0px;
+  left: 90px;
+  background-color: transparent;
+  padding: 0px 200px 200px 20px;
+}
+
+.nav-menu .dropdown3 a{
+  color: rgb(118, 178, 223);
+  text-decoration: none;
+}
+
+.nav-menu .dropdown3 li:hover a{
+  color: white;
+}
 
 
   /* login menu */
   .log-menu {
     margin-right: 20px;
+    min-width: 190px;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -210,7 +290,7 @@ body::before{
   }
 
   
-@media (max-width: 630px) {
+@media (max-width: 630px){
     body {
         min-width: 480px;
     }
