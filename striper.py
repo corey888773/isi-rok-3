@@ -20,9 +20,8 @@ def stip_herbal_pages(in_file, out_file):
                     continue
 
                 if herbal_page:
-                    line = line.replace('\n', '')
-                    line = line.replace('=', '')
-                    line = line.replace('-', '')
+                    line = line.replace('\n', '').replace('=', '').replace('-', '')
+                    
                     out_file.write(line)
 
 
@@ -57,6 +56,15 @@ def prepare_icelandic(in_file, out_file):
                     words = words[:-1]  
 
                 out_file.write(','.join(words))
+
+def get_words(in_file) -> list[str]:
+    words = []
+
+    with open(in_file, 'r') as f:
+        for line in f:
+            words.extend(line.split(','))
+
+    return words
 
 def count_words (in_file) -> dict():
     word_counts = dict()
