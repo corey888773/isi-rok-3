@@ -10,7 +10,7 @@ body {
 }
 
 #page {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 150vh;
 }
@@ -104,9 +104,14 @@ a[href*="github.com/"] {
 }
 
 .navbar {
-    position: absolute;
-    top: 60px;
-    left: 25%;
+    position: sticky;
+    top: 0;
+    left: 25.5%;
+    width: 25%;
+    height: 50%;
+
+    z-index: 1;
+
     width: 60%;
     height: 50px;
     background-color: black;
@@ -357,8 +362,8 @@ main::before{
     }
 
     .navbar {
-        position: absolute;
-        top: 60px;
+        position: sticky;
+        top:0px;
         left: 0;
         width: 100%;
         height: 50px;
@@ -411,7 +416,7 @@ main::before{
     }
 }
 
-@media screen and (max-width: 581px) {
+@media screen and (max-width: 580px) {
     .header,
     .sidebar,
     .sidebar img,
@@ -426,12 +431,11 @@ main::before{
     .footer {
         all: revert;
     }
-}
 
-@media screen and (max-width: 580px) {
     #page {
         display: flex;
         flex-direction: column;
+        position: relative;
     }
     
     .header,
@@ -454,6 +458,7 @@ main::before{
     }
     
     .navbar {
+        position: sticky;
         height: 50px;
         background-color: black;
         z-index: 1;
