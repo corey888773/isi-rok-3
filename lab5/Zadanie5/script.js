@@ -1,39 +1,57 @@
 
 const names = ['Grzegorz', 'Wiktoria', 'Mateusz', 'Ania', 'Sandra', 'Kasia', 'Izabela', 'Weronika'];
-function printNamesWithLetter(letter){
-    let namesWithLetter = names.filter(name => name.includes(letter));
-    zad1 = document.getElementById('zad1')
-    
-    for (let name in namesWithLetter){
-        li = document.createElement('li')
-        li.innerHTML = namesWithLetter[name]
-        zad1.appendChild(li)
+function zad1(letter){
+    let zad1 = document.getElementById('zad1')
+    let ul = document.createElement('ul')
+    ul.id = 'zad1ul'
+
+    zad1Ul = document.getElementById('zad1ul')
+    if(zad1Ul){
+        zad1Ul.remove()
     }
+
+    zad1.appendChild(ul)
+    
+
+    names.forEach(name => {
+        if(name.includes(letter)){
+            let li = document.createElement('li')
+            li.innerHTML = name
+            ul.appendChild(li)
+        }
+    })
 }
 
 
 let  numbers = [1, 2, 3, 4, 5, 6, 7, 8, 8, 9];
-function numbers(){
+function zad2(){
     let zad2 = document.getElementById('zad2')
-    let zad2a =document.createElement('li')
-    zad2a.innerHTML = numbers.every(number => number < 9)
-    zad2.appendChild(zad2a)
+    let ul = document.createElement('ul')
+    ul.id = 'zad2ul'
 
-    let zad2b =document.createElement('li')
-    zad2b.innerHTML = numbers.some(number => number < 6)
-    zad2.appendChild(zad2b)
+    zad2Ul = document.getElementById('zad2ul')
+    if(zad2Ul){
+        zad2Ul.remove()
+    }
 
-    let zad2c =document.createElement('li')
-    zad2c.innerHTML = numbers.map(number => number + 1)
-    zad2.appendChild(zad2c)
+    zad2.appendChild(ul)
 
-    let zad2d =document.createElement('li')
-    zad2d.innerHTML = numbers.filter(number => number % 2 !== 0)
-    zad2.appendChild(zad2d)
+    let li = document.createElement('li')
+    li.innerHTML = numbers.every(number => number < 9)
+    ul.appendChild(li)
 
-    let zad2e =document.createElement('li')
-    zad2e.innerHTML = numbers.reduce((a, b) => a + b)
-    zad2.appendChild(zad2e)
+    let li2 = document.createElement('li')
+    li2.innerHTML = numbers.some(number => number < 6)
+    ul.appendChild(li2)
+
+    let li3 = document.createElement('li')
+    numbers = numbers.map(number => number + 1)
+    li3.innerHTML = numbers.filter(number => number % 2 == 1)
+    ul.appendChild(li3)
+
+    let li4 = document.createElement('li')
+    li4.innerHTML = numbers.reduce((a, b) => a + b, 0)
+    ul.appendChild(li4)
 }
 
 const countries = [
@@ -46,6 +64,27 @@ const countries = [
 	{ name: 'France', continent: 'Europe'},
 	{ name: 'China', continent: 'Asia'}
 ]
+function zad3(continent){
+    let zad3 = document.getElementById('zad3')
+    let ul = document.createElement('ul')
+    ul.id = 'zad3ul'
+
+    zad3Ul = document.getElementById('zad3ul')
+    if(zad3Ul){
+        zad3Ul.remove()
+    }
+
+    zad3.appendChild(ul)
+
+    countries.forEach(country => {
+        if(country.continent === continent){
+            let li = document.createElement('li')
+            li.innerHTML = country.name
+            ul.appendChild(li)
+        }
+    })
+}
+
 
 let people = [
     {"id":123, "name":"Rick Deckard", "email":"rick@bladerunner.org"},
@@ -54,8 +93,50 @@ let people = [
     {"id":258, "name":"Pris", "email":"pris@replicant.io"}
 ];
 
-let duplicateName = ['John', 'Paul', 'George', 'Ringo', 'Paul', 'Paul', 'Ringo'];
+function zad4(){
+    let zad4 = document.getElementById('zad4')
+    let ul = document.createElement('ul')
+    ul.id = 'zad4ul'
 
+    zad4Ul = document.getElementById('zad4ul')
+    if(zad4Ul){
+        zad4Ul.remove()
+    }
+
+    zad4.appendChild(ul)
+
+    people.forEach(person => {
+        if(person.email.includes('replicant.io')){
+            let li = document.createElement('li')
+            li.innerHTML = person.name
+            ul.appendChild(li)
+        }
+    })
+}
+
+let duplicateName = ['John', 'Paul', 'George', 'Ringo', 'Paul', 'Paul', 'Ringo'];
+function zad5(){
+    let zad5 = document.getElementById('zad5')
+    let ul = document.createElement('ul')
+    ul.id = 'zad5ul'
+
+    zad5Ul = document.getElementById('zad5ul')
+    if(zad5Ul){
+        zad5Ul.remove()
+    }
+
+    zad5.appendChild(ul)
+    uniqueName = [...new Set(duplicateName)]
+
+    uniqueName.forEach(name => {
+        let li = document.createElement('li')
+        li.innerHTML = name
+        ul.appendChild(li)
+    })
+
+
+    ul.appendChild(li)
+}
 
 // 1. Na stronach internetowych wyświetlają się nazwy zawierające znak "r".  ( tablica names)
 

@@ -11,19 +11,38 @@
 </head>
 <body>
     <ul id="app"> 
-    <li>Zadanie1
-        <button class="btn btn-outline-danger" onclick="printNamesWithLetter('r')">Print names with R</button>
-        <ul id="zad1">
-        </ul>
+    <li id="zad1">
+        <h2>Zadanie 1</h2>
+        <p>1. Wyświetl wszystkie elementy tablicy</p>
+        <button class="btn btn-primary" onclick="zad1('r')">Wyświetl</button>
     </li>
-    <li>Zadanie2
-        <button class="btn btn-outline-danger" onclick="numbers()">Numbers</button>
-        <ul id="zad2">
-            
-        </ul>
+    <li id="zad2">
+        <h2>Zadanie 2</h2>
+        <p>2. sprawdź czy tablica zawiera tylko elementy mniejsze niż 9. wynik wyswietl na stronei w sekcji 2 <br>
+               sprawdź, czy tablica zawiera jakieś elementy mniejsze niż 6 wyników. wynik wyświetl w przeglądarce w sekcji 2 <br>
+               inkrementuj wszystkie elementy w tablicy numbers. Nastepnie stwórz nowa tablice zawierajaca tylko elementy nieparzyste.<br>
+               Nesteopnie Oblicz sumę wszystkich elementów z tablicy. Wynik wyswietl w sekcji 2</p>
+        <button class="btn btn-primary" onclick="zad2('r')">Wyświetl</button>
 
     </li>
-        
+
+    <li id="zad3">
+        <h2>Zadanie 3</h2>
+        <p>3. Na stronach internetowych wyświetlają się kraje z Europy</p>
+        <button class="btn btn-primary" onclick="zad3('Europe')">Wyświetl</button>
+    </li>
+
+    <li id="zad4">
+        <h2>Zadanie 4</h2>
+        <p>4. Znajdź nazwiska wszystkich osób, które mają e-maile „replicant.io”. wyświetlanie wyników na stronach internetowych.</p>
+        <button class="btn btn-primary" onclick="zad4('r')">Wyświetl</button>
+    </li>
+
+    <li id="zad5">
+        <h2>Zadanie 5</h2>
+        <p>5. usuwanie zduplikowanych wartości z tablicy nazwa duplikatu</p>
+        <button class="btn btn-primary" onclick="zad5('r')">Wyświetl</button>
+    </li>
     </ul>
 </body>
 </html>
