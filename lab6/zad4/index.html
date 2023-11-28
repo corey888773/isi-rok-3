@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: #FFF;
+    padding: 0;
+    margin: 0;
+    }
+
+    #canvas {
+        height: 500px;
+        width: 500px;
+        border: 2px solid #000000;
+        overflow: hidden;
+        background-color: #f8ffca40;
+        cursor: pointer;
+        padding: 20px;
+        box-shadow: 10px 12px 20px rgba(0, 0, 0, 0.15);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    #ball {
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        background-color: red;
+        border-radius: 50%;
+        transition: top 0.5s, left 0.5s;
+    }
+
+    #message {
+        position: absolute;
+        color: red;
+    }
+
+    #coords {
+        position: relative;
+        color: black;
+    }
+    </style>
+    <script>
+        document.addEventListener('click', (event) => {
+            const canvas = document.getElementById('canvas');
+            const ball = document.getElementById('ball');
+            const coords = document.getElementById('coords');
+            const message = document.getElementById('message');
+            const r = canvas.getBoundingClientRect();
+
+            if ( event.clientX >= r.left &&
+                 event.clientX <= r.right &&
+                 event.clientY >= r.top &&
+                 event.clientY <= r.bottom ) {
+                ball.style.left = `${event.clientX - r.left - ball.offsetWidth / 2}px`;
+                ball.style.top = `${event.clientY - r.top - ball.offsetHeight / 2}px`;
+                coords.innerText = `(${event.clientX - r.left}, ${event.clientY - r.top})`;
+                return;
+            } else {
+                message.style.visibility = 'visible';
+                setTimeout(() => {
+                    message.style.visibility = 'hidden';
+                }, 500);
+
+                message.style.left = event.clientX + 'px';
+                message.style.top = event.clientY + 'px';
+                message.textContent = "Out of the bounds!";
+            }
+        })
+    </script>
+</head>
+<body class="container d-flex flex-column m-0 p-0">
+    <div id="canvas" class="canvas">
+        <div id="ball" class="ball"></div>
+    </div>
+    <div id="coords" class="coords"></div>
+    <div id="message" class="message"></div>
+</body>
+</html>

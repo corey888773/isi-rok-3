@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        let images = ['sydney_big.jpeg', 'chicago_big.jpeg', 'cracow_big', 'berlin_big.jpeg', 'sydney_big.jpeg', 'warsaw_big.jpeg'];
+        let currentImageIndex;
+
+        $('.img-thumbnail').click(function() {
+            currentImageIndex = $(this).data('id') - 1;
+            $('#modalImage').attr('src', images[currentImageIndex]);
+        });
+
+        $('#prev').click(function() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            $('#modalImage').attr('src', images[currentImageIndex]);
+        });
+
+        $('#next').click(function() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            $('#modalImage').attr('src', images[currentImageIndex]);
+        });
+    </script>
+</head>
+<body>
+    <div class="container m-auto p-5">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <img src="sydney_big.jpeg" class="img-thumbnail" data-toggle="modal" data-target="#imageModal" data-id="1">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="chicago_big.jpeg" class="img-thumbnail" data-toggle="modal" data-target="#imageModal" data-id="2">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="cracow_big.jpeg" class="img-thumbnail" data-toggle="modal" data-target="#imageModal" data-id="3">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="berlin_big.jpeg" class="img-thumbnail" data-toggle="modal" data-target="#imageModal" data-id="4">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="sydney_big.jpeg" class="img-thumbnail" data-toggle="modal" data-target="#imageModal" data-id="5">
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <img src="warsaw_big.jpeg" class="img-thumbnail" data-toggle="modal" data-target="#imageModal" data-id="6">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="modalImage">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Stop</button>
+                    <button type="button" class="btn btn-primary" id="prev"> < </button>
+                    <button type="button" class="btn btn-primary" id="next"> > </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
