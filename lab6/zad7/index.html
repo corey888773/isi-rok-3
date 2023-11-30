@@ -4,25 +4,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        let images = ['sydney_big.jpeg', 'chicago_big.jpeg', 'cracow_big', 'berlin_big.jpeg', 'sydney_big.jpeg', 'warsaw_big.jpeg'];
-        let currentImageIndex;
 
-        $('.img-thumbnail').click(function() {
-            currentImageIndex = $(this).data('id') - 1;
-            $('#modalImage').attr('src', images[currentImageIndex]);
-        });
-
-        $('#prev').click(function() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            $('#modalImage').attr('src', images[currentImageIndex]);
-        });
-
-        $('#next').click(function() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            $('#modalImage').attr('src', images[currentImageIndex]);
-        });
-    </script>
 </head>
 <body>
     <div class="container m-auto p-5">
@@ -62,5 +44,29 @@
             </div>
         </div>
     </div>
+    <script>
+        let images = ['sydney_big.jpeg', 'chicago_big.jpeg', 'cracow_big', 'berlin_big.jpeg', 'sydney_big.jpeg', 'warsaw_big.jpeg'];
+        let currentImageIndex;
+        
+        let modalImage = document.getElementById('modalImage');
+
+        let img_thumbnails = document.getElementsByClassName('img-thumbnail');
+        for (let i = 0; i < img_thumbnails.length; i++) {
+            img_thumbnails[i].addEventListener('click', function() {
+                currentImageIndex = i;
+                modalImage.src = images[i];
+            });
+        }
+
+        document.getElementById('prev').addEventListener('click', function() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            modalImage.src = images[currentImageIndex];
+        });
+
+        document.getElementById('next').addEventListener('click', function() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            modalImage.src = images[currentImageIndex];
+        });
+    </script>
 </body>
 </html>

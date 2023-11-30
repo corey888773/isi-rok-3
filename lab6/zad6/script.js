@@ -47,56 +47,73 @@ function addOrReplaceClassIfExists(element, oldClass, newClass) {
     }
 }
 
+
+let validPassword = false;
+document.getElementsByClassName('new-password')[0].addEventListener('input', (event) => {
+    const newPassword = event.target.value;
+    validPassword = true;
+
+    if (newPassword.length >= 8) {
+        document.querySelector('.item1 i').className = 'fas fa-check';
+        addOrReplaceClassIfExists(document.querySelector('.item1'), 'btn-outline-danger', 'btn-outline-success');
+    }
+    else{
+        validPassword = false;
+        document.querySelector('.item1 i').className = 'fas fa-times';
+        addOrReplaceClassIfExists(document.querySelector('.item1'), 'btn-outline-success', 'btn-outline-danger');
+    }
+
+    if (/[^A-Za-z0-9]/.test(newPassword)) {
+        document.querySelector('.item2 i').className = 'fas fa-check';
+        addOrReplaceClassIfExists(document.querySelector('.item2'), 'btn-outline-danger', 'btn-outline-success');
+    }
+    else
+    {
+        validPassword = false;
+        document.querySelector('.item2 i').className = 'fas fa-times';
+        addOrReplaceClassIfExists(document.querySelector('.item2'), 'btn-outline-success', 'btn-outline-danger');
+    }
+
+    if (/[A-Z]/.test(newPassword)) {
+        console.log('hello')
+        document.querySelector('.item3 i').className = 'fas fa-check';
+        addOrReplaceClassIfExists(document.querySelector('.item3'), 'btn-outline-danger', 'btn-outline-success');
+    }
+    else
+    {
+        validPassword = false;
+        document.querySelector('.item3 i').className = 'fas fa-times';
+        addOrReplaceClassIfExists(document.querySelector('.item3'), 'btn-outline-success', 'btn-outline-danger');
+    }
+
+    if (/\d/.test(newPassword)) {
+        document.querySelector('.item4 i').className = 'fas fa-check';
+        addOrReplaceClassIfExists(document.querySelector('.item4'), 'btn-outline-danger', 'btn-outline-success');
+    }
+    else
+    {
+        validPassword = false;
+        document.querySelector('.item4 i').className = 'fas fa-times';
+        addOrReplaceClassIfExists(document.querySelector('.item4'), 'btn-outline-success', 'btn-outline-danger');
+    }
+});
+
 document.getElementsByClassName('repeat-password')[0].addEventListener('keydown', (event) => {
+    const newPassword = document.getElementsByClassName('new-password')[0].value;
     if (event.key === 'Enter') {
-        const newPassword = document.getElementsByClassName('new-password')[0].value;
         const repeatPassword = event.target.value;
+
+        if (!validPassword) {
+            document.getElementById('password-match-error').textContent = 'Password does not meet requirements';
+            document.getElementById('password-match-error').style.color = 'red';
+            return;
+        }
 
         if (newPassword !== repeatPassword) {
             document.getElementById('password-match-error').textContent = 'Passwords do not match';
             document.getElementById('password-match-error').style.color = 'red';
             return;
         }
-
         document.getElementById('password-match-error').textContent = '';
-        if (newPassword.length >= 8) {
-            document.querySelector('.item1 i').className = 'fas fa-check';
-            addOrReplaceClassIfExists(document.querySelector('.item1'), 'btn-outline-danger', 'btn-outline-success');
-        }
-        else{
-            document.querySelector('.item1 i').className = 'fas fa-times';
-            addOrReplaceClassIfExists(document.querySelector('.item1'), 'btn-outline-success', 'btn-outline-danger');
-        }
-
-        if (/[^A-Za-z0-9]/.test(newPassword)) {
-            document.querySelector('.item2 i').className = 'fas fa-check';
-            addOrReplaceClassIfExists(document.querySelector('.item2'), 'btn-outline-danger', 'btn-outline-success');
-        }
-        else
-        {
-            document.querySelector('.item2 i').className = 'fas fa-times';
-            addOrReplaceClassIfExists(document.querySelector('.item2'), 'btn-outline-success', 'btn-outline-danger');
-        }
-
-        if (/[A-Z]/.test(newPassword)) {
-            console.log('hello')
-            document.querySelector('.item3 i').className = 'fas fa-check';
-            addOrReplaceClassIfExists(document.querySelector('.item3'), 'btn-outline-danger', 'btn-outline-success');
-        }
-        else
-        {
-            document.querySelector('.item3 i').className = 'fas fa-times';
-            addOrReplaceClassIfExists(document.querySelector('.item3'), 'btn-outline-success', 'btn-outline-danger');
-        }
-
-        if (/\d/.test(newPassword)) {
-            document.querySelector('.item4 i').className = 'fas fa-check';
-            addOrReplaceClassIfExists(document.querySelector('.item4'), 'btn-outline-danger', 'btn-outline-success');
-        }
-        else
-        {
-            document.querySelector('.item4 i').className = 'fas fa-times';
-            addOrReplaceClassIfExists(document.querySelector('.item4'), 'btn-outline-success', 'btn-outline-danger');
-        }
     }
 });

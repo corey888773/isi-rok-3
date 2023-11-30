@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const counterValue = parseInt(counter.innerHTML);
         counter.innerHTML = counterValue + value;
-        if (!removedListenerYellow && counterValue > 30) removeListenerYellow();
-        if (!removedListenerRed && counterValue > 50) removeListenerRed();
+        if (!removedListenerYellow && counterValue > 10) removeListenerYellow();
+        if (!removedListenerRed && counterValue > 20) removeListenerRed();
     }
 
     const handleContainer1Click = (event) => {
