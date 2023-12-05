@@ -53,6 +53,8 @@ document.getElementsByClassName('new-password')[0].addEventListener('input', (ev
     const newPassword = event.target.value;
     validPassword = true;
 
+    document.getElementById('password-match-error').textContent = '';
+
     if (newPassword.length >= 8) {
         document.querySelector('.item1 i').className = 'fas fa-check';
         addOrReplaceClassIfExists(document.querySelector('.item1'), 'btn-outline-danger', 'btn-outline-success');
@@ -114,6 +116,14 @@ document.getElementsByClassName('repeat-password')[0].addEventListener('keydown'
             document.getElementById('password-match-error').style.color = 'red';
             return;
         }
+        else{
+            document.getElementById('password-match-error').textContent = 'Passwords match';
+            document.getElementById('password-match-error').style.color = 'green';
+            return;
+        }
+    }
+    else{
         document.getElementById('password-match-error').textContent = '';
+        return;
     }
 });

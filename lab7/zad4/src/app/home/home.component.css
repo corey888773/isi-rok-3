@@ -1,0 +1,8 @@
+* {
+    --primary-color: rgb(85, 15, 79);
+}
+
+#tittle {
+    background-color: var(--primary-color);
+    color: white;
+}

@@ -33,8 +33,6 @@ fifthDensityP.innerText = fifthDensity.name;
 fifthDensityD.appendChild(fifthDensityP);
 
 //d - miasta powyzej 100000
-
-
 let cities = [];
 let noCities = [];
 data.forEach(city => {

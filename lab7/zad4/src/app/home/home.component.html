@@ -1,0 +1,6 @@
+<section id="tittle" class="container rounded mt-2 p-3">
+    <h3 class="text-center" >Lista Przyjaciół</h3>
+</section>
+<section class="results">
+    <app-friend *ngFor="let friend of friendsList" [friend]="friend"></app-friend>
+</section>

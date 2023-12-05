@@ -20,14 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let messageOpen = false;
 
     const setup = () => {
-        helper.addEventListener("click", helperClick, true);
         container1.addEventListener("click", handleContainer1Click, !isOrderOriginal);
         container2.addEventListener("click", handleContainer2Click, !isOrderOriginal);
         container3.addEventListener("click", handleContainer3Click, !isOrderOriginal);
     }
 
     const removeListerners = () => {
-        helper.removeEventListener("click", helperClick, true);
         container1.removeEventListener("click", handleContainer1Click, isOrderOriginal);
         container2.removeEventListener("click", handleContainer2Click, isOrderOriginal);
         container3.removeEventListener("click", handleContainer3Click, isOrderOriginal);
@@ -58,20 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
         logs.prepend(newLogP);
     }
 
-    const helperClick = () => {
-        messageOpen = true;
-    }
-
     const handleClick = (element, value) => {
         if (messageOpen || !isOrderOriginal) {
-            message.innerHTML = `Nacisnąłeś ${element} o wartości ${value}`;
+            // message.innerHTML = `${element} - ${value}`;
             messageOpen = false;
         }
 
         const counterValue = parseInt(counter.innerHTML);
         counter.innerHTML = counterValue + value;
-        if (!removedListenerYellow && counterValue > 10) removeListenerYellow();
-        if (!removedListenerRed && counterValue > 20) removeListenerRed();
+        if (!removedListenerYellow && counterValue + value > 30) removeListenerYellow();
+        if (!removedListenerRed && counterValue + value > 50) removeListenerRed();
     }
 
     const handleContainer1Click = (event) => {

@@ -51,10 +51,10 @@
             const message = document.getElementById('message');
             const r = canvas.getBoundingClientRect();
 
-            if ( event.clientX >= r.left &&
-                 event.clientX <= r.right &&
-                 event.clientY >= r.top &&
-                 event.clientY <= r.bottom ) {
+            if ( event.clientX >= r.left + 10 &&
+                 event.clientX <= r.right - 10 &&
+                 event.clientY >= r.top + 10 &&
+                 event.clientY <= r.bottom - 10 ) {
                 ball.style.left = `${event.clientX - r.left - ball.offsetWidth / 2}px`;
                 ball.style.top = `${event.clientY - r.top - ball.offsetHeight / 2}px`;
                 coords.innerText = `(${event.clientX - r.left}, ${event.clientY - r.top})`;
