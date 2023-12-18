@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<section class="container shadow border-light rounded mt-3">
+    <div id="name" class="text-center">
+        <h2>{{friend.imie}} {{friend.nazwisko}}</h2>
+        <div id="horizontal-line"></div>
+    </div>
+    <button id="hide-details" class="mb-2" (click)="toggleDetails()">{{buttonLabel}}</button>
+    <div  *ngIf="detailsVisible" id="details" class="container p-3">
+        <div class="container shadow rounded d-flex justify-content-center align-items-around">
+            <p class="text m-2"><strong>Phone:</strong> {{friend.numer}}</p>
+        </div>
+        <div class="container shadow rounded d-flex justify-content-center align-items-around">
+            <p class="text m-2"><strong>Email:</strong> {{friend.email}}</p>
+        </div>
+    </div>
+    
+</section>

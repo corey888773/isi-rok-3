@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(255, 255, 75);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu{
+    width: 400px;
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+    list-style: none;
+    text-decoration: none;
+}
+
+.dropable{
+    overflow: hidden;
+}
+
+.dropable .back {
+    display: none;
+    transition: all 0.5s ease-in-out;
+}
+
+.dropable:target .back{
+    display: block;
+    padding: 15px 15px;
+    background-color: rgb(242, 112, 78);
+    color: #fff;
+    position: relative;
+}
+
+.dropable:target .droplabel{
+    background-color: rgb(242, 112, 78);
+    display: none;
+}
+
+.dropable:target .dropdown{
+    max-height: 20em;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.droplabel{
+    display: block;
+    padding: 15px 15px;
+    background-color: rgb(241, 114, 212);
+    color: #fff;
+    position: relative;
+    
+    transition: all 0.2s ease-in-out;
+}
+
+.droplabel:before {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.dropable:target .back:before{
+    opacity: 1;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 20px;
+    bottom: -15px;
+    z-index: 1;
+    border-left: 15px solid transparent;
+    border-right:15px solid transparent;
+    border-top:15px solid rgb(242, 112, 78);
+    
+}
+
+.dropdown{
+    background: rgb(74, 101, 220);
+    overflow: hidden;
+    max-height:0px;
+    transition: all 0.7s ease-in-out;
+}
+
+.dropdown a{
+    display: block;
+    padding: 15px 40px;
+    color: #fff;
+    font-size: 16px;
+    position: relative;
+
+    transition: all 0.5s ease-in-out;
+}
+.dropdown a:before{
+    content: '';
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+.dropdown a:after{
+    content: '';
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.dropdown a:hover{
+    background: -moz-linear-gradient(top, rgb(74, 101, 220) 0%, rgb(74, 101, 220) 50%, rgb(103, 132, 250) 50%, rgb(103, 132, 250) 100%);
+    background: -webkit-linear-gradient(top, rgb(74, 101, 220) 0%, rgb(74, 101, 220) 50%, rgb(103, 132, 250) 50%, rgb(103, 132, 250) 100%);
+    background: linear-gradient(top, rgb(74, 101, 220) 0%, rgb(74, 101, 220) 50%, rgb(103, 132, 250) 50%, rgb(103, 132, 250) 100%);
+}
+
+.dropdown a:hover:after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 6px;
+    right: 0px;
+    top:3px;
+    opacity: 1;
+
+    border-top: 22px solid transparent;
+    border-right: 20px solid rgb(255, 255, 75);
+    border-bottom: 22px solid transparent;
+}
+
+.dropdown a:hover:before{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 5px;
+    left: 0;
+    top:3px;
+    opacity: 1;
+    border-top: 22px solid transparent;
+    border-left: 20px solid rgb(255, 255, 75);
+    border-bottom: 22px solid transparent;
+}

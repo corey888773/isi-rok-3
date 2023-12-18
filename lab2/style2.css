@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .box {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-color: #eee;
+
+        display: flex;
+        flex-direction: row;
+
+    }
+    .box #one{
+        height: 100%;
+        width: 15%;
+        background-color: red;
+    }
+    .box #two{
+        width: 15%;
+        height: 30%;
+        background-color: aqua;
+    }
+    .box #three{
+        width: 15%;
+        height: 30%;
+        align-self: center;;
+        background-color: blueviolet;
+    }
+    .box #four{
+        width: 15%;
+        height: 30%;
+        background-color: brown;
+    }
+
+    .box2 {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-color: #eee;
+
+        display: flex;
+        flex-direction: column;
+    }
+    .box2 #one{
+        width: 100%;
+        background-color: red;
+        flex-grow:1;
+    }
+    .box2 #two{
+        width: 30%;
+        background-color: aqua;
+        flex-grow:1;
+    }
+    .box2 #three{
+        width: 30%;
+        align-self: center;;
+        background-color: blueviolet;
+        flex-grow:1;
+    }
+    .box2 #four{
+        width: 30%;
+        background-color: brown;
+        flex-grow:1;
+    }
+
+    .box3 {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-color: #eee;
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+    }
+    .box3 div{
+        flex-grow: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .box3-in1 {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-color: #eee;
+        padding-bottom: 10px;
+    }
+    .box3-in2 {
+        width: 100%;
+        height: 200px;
+        position: relative;
+        background-color: #eee;
+    }
+
+    .box3-in1 #one{
+        background-color: red;
+        flex-grow:1;
+    }
+    .box3-in1 #two{
+        background-color: aqua;
+        flex-grow:1;    
+        margin-left: 10px;
+    }
+    .box3-in2 #three{
+        background-color: yellow;
+        flex-grow:1;
+    }
+
+
+    .strona {
+        /* styles for the main container */
+        width: 100%;
+        height: 500px;
+        position: relative;
+        background-color: #eee;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        border: 1px solid black;
+      }
+      
+      .strona #top {
+        position: relative;
+        background-color: darkgrey;
+        display: flex;
+        flex-grow: 2;
+        padding: 0 2% 0 2% ;
+        text-align: center;;
+        border: solid 1px black;
+      }
+      .strona #top #top-strony {   
+        flex-grow: 3;
+      }
+      
+      .strona #top #logo {
+        background-color: white;
+        height: 50%;
+        width: 23%;
+        order: -1;
+        align-self: center;
+
+        border: solid 1px black;
+      }
+      
+      .strona #tresc {
+        position: relative;
+        background-color: white;
+        display: flex;
+        width: 100%;
+        flex-grow: 5;
+        flex-direction: column;
+        border: solid 1px black;    
+      }
+      
+      .strona #tresc #navbar {
+        position: relative;
+        background-color: white;
+        display: flex;
+        width: 100%;
+        flex-grow: 1;
+        flex-direction: row;
+        /* styles for the navigation bar */
+      }
+      
+      .strona #navbar #navitem {
+        flex-grow: 1;
+        border: solid 1px black;
+      }
+      
+      .strona #navbar #strona-glowna {
+        flex-grow: 1;
+        border: solid 1px black;
+      }
+      
+      .strona #navbar #lokalizacja {
+        flex-grow: 1;
+        border: solid 1px black;
+      }
+      
+      .strona #tresc #content {
+        position: relative;
+        background-color: whitesmoke;
+        display: flex;
+        width: 100%;
+        flex-grow: 5;
+        flex-direction: row;
+        /* styles for the main content area */
+      }
+      
+      .strona #content #lewa-kolumna {
+        flex-grow: 1;
+        border: solid 1px black;
+      }
+      
+      .strona #content #zawartosc {
+        flex-grow: 3;
+        border: solid 1px black;
+      }
+      
+      .strona #stopka {
+        position: relative;
+        background-color: darkgrey;
+        display: flex;
+        width: 100%;
+        flex-grow: 1;
+        border: solid 1px black;
+      }
+}

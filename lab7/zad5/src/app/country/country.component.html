@@ -1,0 +1,10 @@
+<section>
+    <div id="country" class="{{determineClass()}} container rounded mt-2 d-flex justify-content-center align-items-center">
+        <a class="text-center p-3" href="{{country.wikiLink}}">
+            {{index}}. {{country.name}}
+        </a>
+        <button class="btn btn-danger ml-2 p-1" (click)="removeCountry()">
+            Remove
+        </button>
+    </div>
+</section>  

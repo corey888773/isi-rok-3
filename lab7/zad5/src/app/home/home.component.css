@@ -1,0 +1,17 @@
+*{
+    --primary-color: rgb(73, 151, 98);
+}
+
+#tittle {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#favourite-countries{
+    color: var(--primary-color);
+}
+
+.horizontal-line {
+    transform: translateY(-8px);
+    border-bottom: 1px solid var(--primary-color);
+}
